@@ -210,7 +210,7 @@ def main():
 </div>
 
 <div style="background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
-    <h3>📌 Objectif Principal</h3>
+    <h3>📌 OBJECTIF PRINCIPAL</h3>
     <p>Résoudre le <strong>problème d'insuffisance de données vibratoires enregistrées</strong> en appliquant des techniques de ré-échantillonnage scientifiquement validées pour augmenter la résolution temporelle des signaux.</p>
 </div>
 
