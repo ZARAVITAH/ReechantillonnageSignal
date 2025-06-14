@@ -205,7 +205,6 @@ def main():
     st.title("🔬 Analyseur de Ré-échantillonnage de Signaux Vibratoires")
     st.markdown("""
 <div style="text-align: center; margin-bottom: 30px;">
-    <h1>🔬 Analyseur de Ré-échantillonnage de Signaux Vibratoires</h1>
     <p style="font-size: 18px;">Application web scientifique pour l'analyse et le ré-échantillonnage de signaux vibratoires</p>
 </div>
 
