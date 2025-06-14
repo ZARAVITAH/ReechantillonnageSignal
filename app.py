@@ -10,7 +10,7 @@ from sklearn.gaussian_process.kernels import RBF, Matern
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 import seaborn as sns
 from datetime import datetime
-from io import BytesIO
+from io import BytesIO, StringIO
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -505,12 +505,16 @@ def main():
                   f"Nombre des points originales: {len(t_orig)}\t"
                   f"Nombres des points finales: {n_points}\n"
             )
+            csv_buffer = StringIO()
+            csv_buffer.write(header)
+            download_data.to_csv(csv_buffer, index=False, sep=';')
+            csv_content = csv_buffer.getvalue()
             #--------------------------------------------AJOUT
-            csv_content = header
-            csv_content += "time[ms]\tamplitude[g]\t\n"
+            
+            #csv_content += "time[ms]\tamplitude[g]\t\n"
             # Ajouter les données avec point-virgule comme séparateur
-            for _, row in download_data.iterrows():
-                csv_content += f"{row['time[ms]']:.7f}\t{row['amplitude[g]']:.7f}\t\n"
+            #for _, row in download_data.iterrows():
+            #    csv_content += f"{row['time[ms]']:.7f}\t{row['amplitude[g]']:.7f}\t\n"
 
              #csv_content += download_data.to_csv(
              #   sep='\t', 
@@ -521,9 +525,9 @@ def main():
              #)
     
             # Créer le buffer de téléchargement
-            csv_buffer = BytesIO()
-            csv_buffer.write(csv_content.encode('utf-8'))
-            csv_buffer.seek(0)
+            #csv_buffer = BytesIO()
+            #csv_buffer.write(csv_content.encode('utf-8'))
+            #csv_buffer.seek(0)
             
             #-------------------------VRAI
             #csv_buffer = BytesIO()
@@ -532,7 +536,7 @@ def main():
             
             st.download_button(
                 label=f"📥 Télécharger {resampler.methods[method_to_download]}",
-                data=csv_buffer,                       #csv_buffer.getvalue(),
+                data=csv_content,                       #csv_buffer.getvalue(),
                 file_name=f"signal_resampled_{method_to_download}_{n_points}pts.csv",
                 mime="text/csv"
             )
