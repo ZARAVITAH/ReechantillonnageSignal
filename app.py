@@ -537,7 +537,7 @@ def main():
             st.download_button(
                 label=f"📥 Télécharger {resampler.methods[method_to_download]}",
                 data=csv_content,                       #csv_buffer.getvalue(),
-                file_name=f"signal_resampled_{method_to_download}_{n_points}pts.csv",
+                file_name=f"signal_resampled_{method_to_download}_{n_points}pts_{datetime.now().strftime('%Y_%m_%d_%H_%M_%S')}.csv",
                 mime="text/csv"
             )
         
