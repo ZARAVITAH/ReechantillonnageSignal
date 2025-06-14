@@ -223,6 +223,7 @@ def main():
         <li style="margin-bottom: 10px;">• 📋 <strong>Métriques d'évaluation</strong>: MSE, MAE, RMSE, Corrélation, SNR</li>
         <li style="margin-bottom: 10px;">• 🌊 <strong>Analyse spectrale</strong>: Comparaison FFT pour validation</li>
         <li style="margin-bottom: 10px;">• 💾 <strong>Export des résultats</strong>: Téléchargement CSV des signaux traités</li>
+        <li style="margin-bottom: 10px;">• 🔗 <strong>Compatibilité</strong>: Les signaux exportés sont directement utilisables dans l'application <a href="https://blsd-analyse-bwgu6rqt9v52qetbazwkdv.streamlit.app/" target="_blank" style="color: #1e88e5; font-weight: bold;">Analyse Vibratoire BLSD</a></li>
         <li style="margin-bottom: 10px;">• 💡 <strong>Recommandations automatiques</strong>: Sélection optimale basée sur les performances</li>
     </ul>
 </div>
