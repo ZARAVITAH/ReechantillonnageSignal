@@ -202,10 +202,10 @@ class VibrationResampler:
         }
 
 def main():
-    st.title("🔬 Analyseur de Ré-échantillonnage de Signaux Vibratoires")
+    st.title("🔬 Analyseur de Ré-échantillonnage de signaux vibratoires")
     st.markdown("""
 <div style="text-align: center; margin-bottom: 30px;">
-    <p style="font-size: 18px;">Application Web scientifique pour l'analyse et le ré-échantillonnage de signaux vibratoires</p>
+    <p style="font-size: 18px;"># **Application Web scientifique pour l'analyse et le ré-échantillonnage de signaux vibratoires**</p>
 </div>
 
 <div style="background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
