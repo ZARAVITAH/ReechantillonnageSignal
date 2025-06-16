@@ -296,13 +296,27 @@ def main():
     
     # Paramètres de ré-échantillonnage
     st.sidebar.subheader("Paramètres de ré-échantillonnage")
-    n_points = st.sidebar.number_input(
-        "Nombre de points souhaités",
-        min_value=10,
-        max_value=len(t_orig) * 5,                 # au lieu de 5000 fixe ou ça
-        value=len(t_orig) * 2,                     # au lieu de len(t_orig) * 2, min(len(t_orig) * 2, max_points)
-        step=10
-    )
+    #n_points = st.sidebar.number_input(
+    #    "Nombre de points souhaités",
+    #    min_value=256,
+    #    max_value=32768,                 # au lieu de 5000 fixe ou ça
+    #    value=len(t_orig) * 2,                     # au lieu de len(t_orig) * 2, min(len(t_orig) * 2, max_points)
+    #    step=10
+    #)
+    # Définir les options discrètes en puissances de 2
+    min_power = 8  # 2^8 = 256
+    max_power = 15  # 2^15 = 32768
+    options = [2**i for i in range(min_power, max_power + 1)]
+
+    # Trouver la valeur par défaut la plus proche parmi les options
+    default_value = len(t_orig) * 2
+    closest_value = min(options, key=lambda x: abs(x - default_value))
+    
+    n_points = st.sidebar.selectbox(
+       "Nombre de points souhaités",
+        options=options,
+        index=options.index(closest_value)
+     )
     
     # Sélection des méthodes
     selected_methods = st.sidebar.multiselect(
