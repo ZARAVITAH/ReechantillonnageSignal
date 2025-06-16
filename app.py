@@ -35,7 +35,7 @@ class VibrationResampler:
             'gpr': 'Gaussian Process Regression'
         }
     
-    def generate_synthetic_signal(self, duration=2, fs_original=256, noise_level=0.1):
+    def generate_synthetic_signal(self, duration=2, fs_original=100, noise_level=0.1):
         """
         Génère un signal vibratoire synthétique complexe
         Basé sur les caractéristiques typiques des signaux vibratoires industriels
